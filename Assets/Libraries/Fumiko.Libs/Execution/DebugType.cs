@@ -1,0 +1,40 @@
+namespace Fumiko.Systems.Debug
+{
+    public enum DebugType
+    {
+        NONE,
+        SINGLE,
+        CONTINUOUS,
+        UPDATE,
+        UPDATE_FIXED,
+        UPDATE_LATE,
+        GAME,
+        UI,
+        COMBAT,
+        EFFECT,
+        CLEANUP,
+        STARTUP,
+        LEVEL,
+        CHARACTERS,
+        PHYSICS,
+        ANIMATION,
+        CAMERA,
+        INFO,
+        DEBUG,
+        PLAYER,
+        MOVEMENT,
+        PLATFORMING,
+        COLLISION,
+        PICKUP,
+        INTERACTABLE,
+        DIALOGUE,
+        TEXT,
+        FILES,
+        CRITICAL,
+        GAMESYSTEM_QUERIES,
+        GAMESYSTEM_ACTIONS,
+        EXECUTION_SYSTEM,
+        AI,
+        EQUIPMENT_SYSTEM
+    }
+}
