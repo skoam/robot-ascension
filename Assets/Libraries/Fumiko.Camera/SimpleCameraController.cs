@@ -10,27 +10,58 @@ namespace UnityTemplateProjects
             public float yaw;
             public float pitch;
             public float roll;
-            public float x;
-            public float y;
-            public float z;
 
-            public void SetFromTransform(Transform t)
+            private Vector3 position = Vector3.zero;
+
+            private Transform myTransform;
+            private float myHeight;
+
+            private float newX;
+            private float newY;
+            private float newZ;
+
+            public void SetFromTransform(Transform t, float height)
             {
                 pitch = t.eulerAngles.x;
                 yaw = t.eulerAngles.y;
                 roll = t.eulerAngles.z;
-                x = t.position.x;
-                y = t.position.y;
-                z = t.position.z;
+                position.x = t.position.x;
+                position.y = t.position.y;
+                position.z = t.position.z;
+                myTransform = t;
+                myHeight = height;
             }
 
             public void Translate(Vector3 translation)
             {
                 Vector3 rotatedTranslation = Quaternion.Euler(0, yaw, roll) * translation;
 
-                x += rotatedTranslation.x;
-                y += rotatedTranslation.y;
-                z += rotatedTranslation.z;
+                position = GetValidPosition(position + rotatedTranslation);
+            }
+
+            public Vector3 GetValidPosition(Vector3 newPosition)
+            {
+                Vector3 validPosition = position;
+
+                RaycastHit[] hits = Physics.RaycastAll(
+                    newPosition,
+                    Vector3.down,
+                    myHeight + myHeight / 2f
+                );
+
+                for (int i = 0; i < hits.Length; i++)
+                {
+                    if (hits[i].transform.tag == "Ground")
+                    {
+                        validPosition.x = newPosition.x;
+                        validPosition.y = hits[i].point.y + myHeight;
+                        validPosition.z = newPosition.z;
+
+                        i = hits.Length;
+                    }
+                }
+
+                return validPosition;
             }
 
             public void LerpTowards(CameraState target, float positionLerpPct, float rotationLerpPct)
@@ -39,15 +70,15 @@ namespace UnityTemplateProjects
                 pitch = Mathf.Lerp(pitch, target.pitch, rotationLerpPct);
                 roll = Mathf.Lerp(roll, target.roll, rotationLerpPct);
 
-                x = Mathf.Lerp(x, target.x, positionLerpPct);
-                y = Mathf.Lerp(y, target.y, positionLerpPct);
-                z = Mathf.Lerp(z, target.z, positionLerpPct);
+                position.x = Mathf.Lerp(position.x, target.position.x, positionLerpPct);
+                position.y = Mathf.Lerp(position.y, target.position.y, positionLerpPct);
+                position.z = Mathf.Lerp(position.z, target.position.z, positionLerpPct);
             }
 
             public void UpdateTransform(Transform t)
             {
                 t.eulerAngles = new Vector3(pitch, yaw, roll);
-                t.position = new Vector3(x, y, z);
+                t.position = new Vector3(position.x, position.y, position.z);
             }
         }
 
@@ -64,18 +95,36 @@ namespace UnityTemplateProjects
 
         [Header("Rotation Settings")]
         [Tooltip("X = Change in mouse position.\nY = Multiplicative factor for camera rotation.")]
-        public AnimationCurve mouseSensitivityCurve = new AnimationCurve(new Keyframe(0f, 0f, 0f, 0f), new Keyframe(1f, 1f, 2f, 0f));
+        public AnimationCurve mouseSensitivityCurveX = new AnimationCurve(
+            new Keyframe(0f, 0.1f, 0f, 2f),
+            new Keyframe(0.3f, 0.3f, 0f, 0f),
+            new Keyframe(0.7f, 0.4f, 0f, 3f),
+            new Keyframe(1f, 1f, 3f, 0f)
+        );
+
+        public AnimationCurve mouseSensitivityCurveY = new AnimationCurve(
+            new Keyframe(0f, 0.1f, 0f, 1.5f),
+            new Keyframe(0.3f, 0.2f, 0f, 0f),
+            new Keyframe(0.7f, 0.3f, 0f, 1.5f),
+            new Keyframe(1f, 0.7f, 1.5f, 0f)
+        );
 
         [Tooltip("Time it takes to interpolate camera rotation 99% of the way to the target."), Range(0.001f, 1f)]
         public float rotationLerpTime = 0.1f;
+
+        public float rotationSpeedX = 80f;
+        public float rotationSpeedY = 70f;
+
+        private float maxMouseMagnitudeX = 0.1f;
+        private float maxMouseMagnitudeY = 0.1f;
 
         [Tooltip("Whether or not to invert our Y axis for mouse input to rotation.")]
         public bool invertY = true;
 
         void OnEnable()
         {
-            m_TargetCameraState.SetFromTransform(transform);
-            m_InterpolatingCameraState.SetFromTransform(transform);
+            m_TargetCameraState.SetFromTransform(transform, height);
+            m_InterpolatingCameraState.SetFromTransform(transform, height);
         }
 
         Vector3 GetInputTranslationDirection()
@@ -102,7 +151,12 @@ namespace UnityTemplateProjects
                 direction += Vector3.right;
             }
 
-            return direction.normalized;
+            if (direction != Vector3.zero)
+            {
+                direction = direction.normalized;
+            }
+
+            return direction;
         }
 
         void Update()
@@ -117,20 +171,34 @@ namespace UnityTemplateProjects
 #endif
             }
 
-            var mouseMovement = GetInputLookRotation() * Time.deltaTime;
+            Vector3 mouseMovement = GetInputLookRotation();
             if (invertY)
                 mouseMovement.y = -mouseMovement.y;
 
-            mouseMovement = Vector3.ClampMagnitude(mouseMovement, 1.5f);
+            mouseMovement = Vector3.ClampMagnitude(mouseMovement, 100f);
 
-            var mouseSensitivityFactor = mouseSensitivityCurve.Evaluate(mouseMovement.magnitude);
+            if (Mathf.Abs(mouseMovement.x) > maxMouseMagnitudeX)
+            {
+                maxMouseMagnitudeX = Mathf.Abs(mouseMovement.x);
+            }
 
-            m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactor;
-            m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactor;
+            if (Mathf.Abs(mouseMovement.y) > maxMouseMagnitudeY)
+            {
+                maxMouseMagnitudeY = Mathf.Abs(mouseMovement.y);
+            }
+
+            mouseMovement.x /= maxMouseMagnitudeX;
+            mouseMovement.y /= maxMouseMagnitudeY;
+
+            float mouseSensitivityFactorX = mouseSensitivityCurveX.Evaluate(Mathf.Abs(mouseMovement.x));
+            float mouseSensitivityFactorY = mouseSensitivityCurveY.Evaluate(Mathf.Abs(mouseMovement.y));
+
+            m_TargetCameraState.yaw += mouseMovement.x * mouseSensitivityFactorX * rotationSpeedX;
+            m_TargetCameraState.pitch += mouseMovement.y * mouseSensitivityFactorY * rotationSpeedY;
             m_TargetCameraState.pitch = Mathf.Clamp(m_TargetCameraState.pitch, -85, 90);
 
             // Translation
-            var translation = GetInputTranslationDirection() * movementSpeed * Time.deltaTime;
+            Vector3 translation = GetInputTranslationDirection() * movementSpeed * Time.deltaTime;
 
             // Speed up movement when shift key held
             if (IsBoostPressed())
@@ -142,8 +210,8 @@ namespace UnityTemplateProjects
 
             // Framerate-independent interpolation
             // Calculate the lerp amount, such that we get 99% of the way to our target in the specified time
-            var positionLerpPct = 1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / positionLerpTime) * Time.deltaTime);
-            var rotationLerpPct = 1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / rotationLerpTime) * Time.deltaTime);
+            float positionLerpPct = 1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / positionLerpTime) * Time.deltaTime);
+            float rotationLerpPct = 1f - Mathf.Exp((Mathf.Log(1f - 0.99f) / rotationLerpTime) * Time.deltaTime);
             m_InterpolatingCameraState.LerpTowards(m_TargetCameraState, positionLerpPct, rotationLerpPct);
 
             m_InterpolatingCameraState.UpdateTransform(transform);

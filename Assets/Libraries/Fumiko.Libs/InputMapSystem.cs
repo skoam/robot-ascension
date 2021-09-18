@@ -62,13 +62,18 @@ namespace Fumiko.Systems.Input
 
                             if (queryType == InputQueryType.AXIS)
                             {
-                                if (UnityEngine.Input.GetAxisRaw(input.axisName) > inputValue)
+                                if (Mathf.Abs(UnityEngine.Input.GetAxis(input.axisName)) > inputValue)
                                 {
-                                    inputValue = UnityEngine.Input.GetAxisRaw(input.axisName);
+                                    inputValue = UnityEngine.Input.GetAxis(input.axisName);
+
+                                    if (input.invertAxis)
+                                    {
+                                        inputValue *= -1;
+                                    }
                                 }
                             }
 
-                            if (queryType == InputQueryType.AXIS)
+                            if (queryType == InputQueryType.AXIS_RAW)
                             {
                                 if (Mathf.Abs(UnityEngine.Input.GetAxisRaw(input.axisName)) > inputValue)
                                 {

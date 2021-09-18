@@ -278,6 +278,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &450524654 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -7921954276207858558, guid: e29ec08da1cffd749a1274155e2561b0, type: 3}
+  m_PrefabInstance: {fileID: 827485682}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &450524658
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450524654}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 1149973307703454695, guid: e29ec08da1cffd749a1274155e2561b0, type: 3}
 --- !u!1 &486758718
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +409,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7921954276207858558, guid: e29ec08da1cffd749a1274155e2561b0, type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: e29ec08da1cffd749a1274155e2561b0, type: 3}
       propertyPath: m_Name
       value: alakajam13th
@@ -501,6 +524,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 486758719}
     m_Modifications:
+    - target: {fileID: 8295935753836838379, guid: 2683e6c56724bd38abc34a1d8f1e6786, type: 3}
+      propertyPath: inputMaps.Array.data[0].inputs.Array.data[0].minInputValue
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295935753836838379, guid: 2683e6c56724bd38abc34a1d8f1e6786, type: 3}
+      propertyPath: inputMaps.Array.data[0].inputs.Array.data[1].minInputValue
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295935753836838379, guid: 2683e6c56724bd38abc34a1d8f1e6786, type: 3}
+      propertyPath: inputMaps.Array.data[0].inputs.Array.data[2].minInputValue
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295935753836838379, guid: 2683e6c56724bd38abc34a1d8f1e6786, type: 3}
+      propertyPath: inputMaps.Array.data[0].inputs.Array.data[3].minInputValue
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 8295935753836838380, guid: 2683e6c56724bd38abc34a1d8f1e6786, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -686,16 +725,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f3ab831031bd359900f87717f279d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boost: 2
-  height: 1.5
-  movementSpeed: 3
+  boost: 1.5
+  height: 2
+  movementSpeed: 5
   positionLerpTime: 0.2
-  mouseSensitivityCurve:
+  mouseSensitivityCurveX:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: 0.3
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -703,9 +751,60 @@ MonoBehaviour:
       inWeight: 0
       outWeight: 0
     - serializedVersion: 3
+      time: 0.7
+      value: 0.4
+      inSlope: 0
+      outSlope: 3
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 2
+      inSlope: 3
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  mouseSensitivityCurveY:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0.1
+      inSlope: 0
+      outSlope: 1.5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.3
+      value: 0.2
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.7
+      value: 0.3
+      inSlope: 0
+      outSlope: 1.5
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 0.7
+      inSlope: 1.5
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
@@ -715,6 +814,8 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   rotationLerpTime: 0.1
+  rotationSpeedX: 80
+  rotationSpeedY: 70
   invertY: 1
 --- !u!114 &1467933827
 MonoBehaviour:

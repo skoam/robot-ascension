@@ -5,6 +5,7 @@ namespace Fumiko.Systems.Input
         BUTTON_DOWN,
         BUTTON_UP,
         AXIS,
-        BUTTON
+        BUTTON,
+        AXIS_RAW
     }
 }
