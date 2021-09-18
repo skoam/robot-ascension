@@ -51,22 +51,22 @@ MonoBehaviour:
       axisName: a
       inputCase: 1
       invertAxis: 0
-      minInputValue: 0
+      minInputValue: 0.1
     - description: right
       axisName: d
       inputCase: 2
       invertAxis: 0
-      minInputValue: 0
+      minInputValue: 0.1
     - description: forward
       axisName: w
       inputCase: 3
       invertAxis: 0
-      minInputValue: 0
+      minInputValue: 0.1
     - description: backwards
       axisName: s
       inputCase: 4
       invertAxis: 0
-      minInputValue: 0
+      minInputValue: 0.1
     - description: look_x
       axisName: mouse_x
       inputCase: 23
@@ -82,9 +82,9 @@ MonoBehaviour:
       inputCase: 9
       invertAxis: 0
       minInputValue: 0
-    - description: Light
+    - description: Interact
       axisName: mouse_left
-      inputCase: 10
+      inputCase: 6
       invertAxis: 0
       minInputValue: 0
     - description: Light Return
