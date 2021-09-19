@@ -48,7 +48,17 @@ ModelImporter:
   - first:
       74: 5446492575174450787
     second: Robot_Armature|Step_9
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Robot
+    second: {fileID: 2100000, guid: d97326f05f7b44de296691d8554b2a2e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Robot_Glow
+    second: {fileID: 2100000, guid: da28fb100022d2d61bc4d92b737fc376, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

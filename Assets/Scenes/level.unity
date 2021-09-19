@@ -1200,8 +1200,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
-  m_Intensity: 5
-  m_Range: 40
+  m_Intensity: 1000
+  m_Range: 400
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1258,7 +1258,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 170415367}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 3.82, y: 2.25, z: 0}
+  m_LocalPosition: {x: -26.97, y: 93.5, z: 7.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 44204179}
@@ -34372,7 +34372,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 0.79607844, g: 0.9331337, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.7
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
@@ -34381,7 +34381,7 @@ Light:
     m_Type: 2
     m_Resolution: -1
     m_CustomResolution: -1
-    m_Strength: 0.621
+    m_Strength: 0.7
     m_Bias: 0.02
     m_NormalBias: 0.1
     m_NearPlane: 0.1
@@ -52605,7 +52605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   actionName: Change Fog Action
-  density: 0.02
+  density: 0.015
   color: {r: 0.5283019, g: 0.32261086, b: 0.251691, a: 1}
   settings:
     restorationMethod: 1
