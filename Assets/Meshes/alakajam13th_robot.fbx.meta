@@ -514,7 +514,7 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 5
+    globalScale: 4
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
@@ -575,7 +575,7 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: Hip
       parentName: Robot_Armature
-      position: {x: 0.005235672, y: 0.13276312, z: 31.077991}
+      position: {x: 0.0041885376, y: 0.10621049, z: 24.862394}
       rotation: {x: 0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: Assist
@@ -585,127 +585,127 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: LegL1
       parentName: Assist
-      position: {x: 0.0000011672639, y: -0.18387794, z: -5.2148733}
+      position: {x: 0.0000009338111, y: -0.14710236, z: -4.171899}
       rotation: {x: -0.3545298, y: 0.000000013205322, z: -0.00000002752893, w: 0.93504477}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: LegL2
       parentName: LegL1
-      position: {x: -3.7303494e-10, y: 7.4375086, z: -0.0000005952231}
+      position: {x: -2.9842795e-10, y: 5.950007, z: -0.0000004761785}
       rotation: {x: 0.352015, y: -0.000000067343166, z: 0.000000006980553, w: 0.9359944}
       scale: {x: 1, y: 0.99999994, z: 1.0000001}
     - name: LegL3
       parentName: LegL2
-      position: {x: 2.873396e-10, y: 9.809849, z: 0.0000005962315}
+      position: {x: 2.2987168e-10, y: 7.847879, z: 0.0000004769852}
       rotation: {x: 0.002688075, y: 2.3538152e-10, z: -1.4169729e-10, w: 0.9999964}
       scale: {x: 1, y: 0.99999994, z: 0.99999994}
     - name: LegL4
       parentName: LegL3
-      position: {x: 2.2673452e-10, y: 6.0123987, z: -0.0000000090064205}
+      position: {x: 1.8138761e-10, y: 4.809919, z: -0.0000000072051365}
       rotation: {x: 4.656613e-10, y: -7.0471834e-25, z: 1.6678587e-17, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: LegL4_end
       parentName: LegL4
-      position: {x: -0, y: 9.440522, z: 0}
+      position: {x: -0, y: 7.5524178, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: LegR1
       parentName: Assist
-      position: {x: -0.0000007906511, y: -0.13113737, z: 5.2345495}
+      position: {x: -0.0000006325209, y: -0.1049099, z: 4.1876397}
       rotation: {x: 0.33056828, y: 0.00000006469716, z: 0.00000007257518, w: 0.9437821}
       scale: {x: 1, y: 1.0000001, z: 1}
     - name: LegR2
       parentName: LegR1
-      position: {x: -1.9468871e-10, y: 7.0575376, z: 0.0000011936013}
+      position: {x: -1.5575097e-10, y: 5.64603, z: 0.0000009548811}
       rotation: {x: -0.3280302, y: -0.00000011766298, z: -0.000000053646964, w: 0.9446673}
       scale: {x: 1, y: 1, z: 1.0000001}
     - name: LegR3
       parentName: LegR2
-      position: {x: -4.133094e-10, y: 9.809849, z: -0.0000002605662}
+      position: {x: -3.306475e-10, y: 7.847879, z: -0.00000020845296}
       rotation: {x: -0.0026881055, y: -3.0554023e-13, z: -1.0480258e-10, w: 0.9999964}
       scale: {x: 1, y: 1, z: 1}
     - name: LegR4
       parentName: LegR3
-      position: {x: 6.2174276e-12, y: 6.012396, z: -0.000000004392846}
+      position: {x: 4.9739423e-12, y: 4.809917, z: -0.0000000035142769}
       rotation: {x: 2.3283064e-10, y: 4.9992344e-25, z: 9.0773245e-18, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: LegR4_end
       parentName: LegR4
-      position: {x: -0, y: 9.440519, z: 0}
+      position: {x: -0, y: 7.5524154, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: HipToHeart
       parentName: Hip
-      position: {x: -0, y: 9.461727, z: 0}
+      position: {x: -0, y: 7.5693817, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Heart
       parentName: HipToHeart
-      position: {x: -0, y: 5.9279013, z: 0}
+      position: {x: -0, y: 4.742321, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmL1
       parentName: Heart
-      position: {x: -0, y: 6.643629, z: 5.2263503}
+      position: {x: -0, y: 5.3149033, z: 4.1810803}
       rotation: {x: 0.7071068, y: 0.00000022197253, z: 0.00000022197251, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmL2
       parentName: ArmL1
-      position: {x: 1.5006663e-10, y: 5.6454678, z: 0.0000000032871306}
+      position: {x: 1.200533e-10, y: 4.516374, z: 0.0000000026297045}
       rotation: {x: 0, y: -0.00000011920929, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmL3
       parentName: ArmL2
-      position: {x: -6.366463e-11, y: 6.012399, z: 0.000000002038849}
+      position: {x: -5.0931703e-11, y: 4.8099194, z: 0.0000000016310793}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmL4
       parentName: ArmL3
-      position: {x: -6.366463e-11, y: 5.7486963, z: 0.000000002038849}
+      position: {x: -5.0931703e-11, y: 4.598957, z: 0.0000000016310793}
       rotation: {x: 0, y: -1.4210855e-14, z: -0, w: 1}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: ArmL4_end
       parentName: ArmL4
-      position: {x: -0, y: 8.913118, z: 0}
+      position: {x: -0, y: 7.1304946, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmR1
       parentName: Heart
-      position: {x: -0, y: 6.590891, z: -5.328422}
+      position: {x: -0, y: 5.2727127, z: -4.2627378}
       rotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmR2
       parentName: ArmR1
-      position: {x: -0, y: 5.2707343, z: 0}
+      position: {x: -0, y: 4.2165875, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmR3
       parentName: ArmR2
-      position: {x: -0, y: 6.065139, z: 0}
+      position: {x: -0, y: 4.8521113, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmR4
       parentName: ArmR3
-      position: {x: -0, y: 5.643215, z: 0}
+      position: {x: -0, y: 4.514572, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: ArmR4_end
       parentName: ArmR4
-      position: {x: -0, y: 9.018598, z: 0}
+      position: {x: -0, y: 7.214878, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: HeartToHead
       parentName: Heart
-      position: {x: -0, y: 10.122843, z: 0}
+      position: {x: -0, y: 8.098274, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 0.99999994, z: 1}
     - name: Head
       parentName: HeartToHead
-      position: {x: -0, y: 5.945115, z: 0}
+      position: {x: -0, y: 4.756092, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Head_end
       parentName: Head
-      position: {x: -0, y: 15.575533, z: 0}
+      position: {x: -0, y: 12.460426, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
@@ -715,7 +715,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 5
+    globalScale: 4
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1

@@ -49,16 +49,32 @@ namespace UnityTemplateProjects
                     myHeight + myHeight / 2f
                 );
 
+                bool notGround = false;
+                Vector3 groundPoint = Vector3.zero;
+
+                if (hits.Length == 0)
+                {
+                    notGround = true;
+                }
+
                 for (int i = 0; i < hits.Length; i++)
                 {
-                    if (hits[i].transform.tag == "Ground")
+                    if (hits[i].transform.tag != "Ground")
                     {
-                        validPosition.x = newPosition.x;
-                        validPosition.y = hits[i].point.y + myHeight;
-                        validPosition.z = newPosition.z;
-
+                        notGround = true;
                         i = hits.Length;
                     }
+                    else
+                    {
+                        groundPoint = hits[i].point;
+                    }
+                }
+
+                if (!notGround)
+                {
+                    validPosition.x = newPosition.x;
+                    validPosition.y = groundPoint.y + myHeight;
+                    validPosition.z = newPosition.z;
                 }
 
                 return validPosition;
