@@ -7,6 +7,7 @@ namespace Fumiko.Interaction.Interactable.Actions
         public string actionName = "Change Fog Action";
 
         public float density = 0.01f;
+        public Color color = Color.black;
 
         public TriggeredActionSettings settings;
         TriggeredActionCachedValues cachedValues = new TriggeredActionCachedValues();
@@ -43,6 +44,7 @@ namespace Fumiko.Interaction.Interactable.Actions
         public void Run(GameObject parent)
         {
             RenderSettings.fogDensity = density;
+            RenderSettings.fogColor = color;
         }
 
         public void Revert(GameObject parent)
