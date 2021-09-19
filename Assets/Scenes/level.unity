@@ -519,6 +519,10 @@ MonoBehaviour:
   targets:
   - gameObject: {fileID: 1829562174}
     state: 1
+  - gameObject: {fileID: 1538952791}
+    state: 0
+  - gameObject: {fileID: 1307049177}
+    state: 0
 --- !u!114 &110257001
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1613,6 +1617,36 @@ MonoBehaviour:
     state: 0
   - gameObject: {fileID: 985323823}
     state: 0
+--- !u!1 &218124520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 218124521}
+  m_Layer: 0
+  m_Name: PlayerPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &218124521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 218124520}
+  m_LocalRotation: {x: -0, y: 6.123235e-17, z: -6.123235e-17, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1829054269}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &218136334
 GameObject:
   m_ObjectHideFlags: 0
@@ -46049,6 +46083,110 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300162766}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1307049177
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1307049178}
+  - component: {fileID: 1307049180}
+  - component: {fileID: 1307049179}
+  - component: {fileID: 1307049181}
+  m_Layer: 0
+  m_Name: Grab_Fly
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1307049178
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307049177}
+  m_LocalRotation: {x: -0, y: 6.123235e-17, z: -6.123235e-17, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1829054269}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1307049179
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307049177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88ea16947da5dd0698a4ae702319ebfe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Change Fog Action
+  density: 0.0005
+  color: {r: 1, g: 1, b: 1, a: 1}
+  settings:
+    restorationMethod: 1
+    runMethod: 1
+--- !u!114 &1307049180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307049177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cc91cd3d0a7b022499fd1fa33f6f2f01, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InteractableName: Unnamed Interactable
+  tracking:
+    PlayerTag: MainCamera
+    hitOrigin: {fileID: 0}
+    player: {fileID: 0}
+  settings:
+    visibleAtDistance: 80
+    interactableLayer: 0
+    triggerMethod: 2
+    interactionAtDistance: 20
+    delayBetweenIndividualActions: 0
+    delayBetweenRepeats: 0.5
+    distanceIn2DSpace: 0
+    showDescription: 1
+    interactionText: "c\u0343\u0335\u0318\u0348\u0348h\u033D\u0344\u036A\u0366\u0315\u032D\u031D\u0329\u0331\u033B\u031D\u0339\u0320o\u0357\u0311\u0328\u0324\u0332\u0359\u0329\u0320\u0333\u0324i\u0351\u0489\u034E\u031F\u033B\u033Ac\u0305\u030B\u030C\u0358\u0323\u0332e\u0305\u0306\u0315\u0347\u0348\u0319\u0325\u0317\u0345\u031E
+      \u030A\u0334\u0355\u031E\u0331\u031Eu\u030F\u0365\u036E\u0358\u0317\u032En\u034A\u036B\u036A\u0309\u0337\u032E\u0316\u0318\u0333\u032Ba\u0350\u034A\u0307\u0337\u0339\u0317\u0316\u0354v\u030D\u033D\u0346\u0309\u0315\u0333\u0359a\u0307\u031B\u031F\u0325\u0323\u032Di\u036C\u0300\u0300\u035B\u0358\u035A\u032D\u0359l\u0367\u034A\u0304\u035D\u031F\u034D\u031D\u032D\u0326\u0325\u0326\u0324a\u033D\u036C\u0305\u0368\u035F\u031C\u0329\u0355\u0318\u0317\u0355b\u0364\u030F\u030D\u0335\u0339\u032E\u0349\u031Cl\u0369\u030D\u0342\u034A\u0340\u0320\u0347\u0339\u0353\u0348\u0323e\u0310\u0342\u0489\u031E\u0331"
+    descriptionText: "C\u031A\u0301\u031A\u0311\u0335\u0330\u033B\u0349\u0331\u0339\u0326\u032CO\u036D\u0341\u0318\u0339M\u0314\u030E\u034F\u0326\u032F\u0347E\u0364\u0322\u033B\u0355\u0316\u0317\u0326\u031E\u0354\u035A
+      \u030F\u0365\u0364\u0360\u0359\u0317\u0339\u0339\u0349\u031CW\u035B\u036A\u0344\u030A\u0337\u032E\u033B\u0339\u0319I\u0366\u036E\u0315\u0329\u034D\u0355\u0319\u0339T\u035B\u035F\u0345\u033B\u032F\u0320\u0318\u031C\u0332\u0331H\u030B\u033F\u0304\u0310\u0322\u032A\u032E\u0333\u0329\u0349\u031D
+      \u0366\u0302\u0489\u0320\u0318M\u0308\u030E\u0303\u0341\u0329\u0320\u0348\u0333\u0330\u0316\u0333E\u035B\u035F\u032F\u0316
+      \u0368\u0367\u0367\u0321\u0333\u0355\u0348M\u030F\u0364\u035B\u0313\u031B\u0345\u0326\u031D\u0356Y\u0342\u0335\u032F\u032B\u032B
+      \u0368\u0350\u0307\u0362\u035A\u0359F\u0364\u0350\u031B\u0316\u033A\u032B\u032AR\u0364\u031A\u0307\u031B\u0347\u0324\u0330\u035A\u031F\u0348\u033BI\u0301\u0365\u0300\u033D\u0489\u032C\u033C\u032E\u0330\u032A\u035A\u0349\u0324E\u0300\u036D\u035D\u034E\u0354N\u0343\u031A\u0367\u035E\u034D\u0324\u032C\u031FD\u0301\u0366\u034F\u032F\u0320"
+    descriptionTextTuple: []
+    locked: 0
+--- !u!114 &1307049181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1307049177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 566271d9aa40847a88779dbcee7745d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actionName: Disable Movement Action
+  cameraController: {fileID: 1467933826}
+  copyLocation: {fileID: 218124521}
+  settings:
+    restorationMethod: 1
+    runMethod: 1
 --- !u!1 &1308503585
 GameObject:
   m_ObjectHideFlags: 0
@@ -52621,6 +52759,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3f3ab831031bd359900f87717f279d8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  movementDisabled: 0
+  copyLocation: {fileID: 0}
   boost: 2
   height: 2
   movementSpeed: 5
@@ -55344,6 +55484,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1816576206}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!4 &1829054269 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8402543237768986989, guid: c3c9090471ab764d7ba5262b3f92fb0e, type: 3}
+  m_PrefabInstance: {fileID: 1189331929}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1829562174
 GameObject:
   m_ObjectHideFlags: 0
