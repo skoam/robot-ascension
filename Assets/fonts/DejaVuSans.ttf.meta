@@ -1,0 +1,25 @@
+fileFormatVersion: 2
+guid: e2a7dd418aa69fcf8ba327ade471de6c
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - DejaVu Sans
+  - unifont-14.0.01
+  - unifont_jp-14.0.01
+  - Arial
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 177d94803c6cafe3daa8cf2cd4dd9625, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
